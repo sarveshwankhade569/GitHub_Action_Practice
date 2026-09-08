@@ -1,16 +1,30 @@
-# Start with naming our workflow
-name: Hello
+# Goal: To say Hello and tell the title / Name of repository
 
-on: 
-  push: 
-    branches: [main]
+# Start with naming your workflow
+name: Hello Dosto
+
+# when the workflow runs
+on:
+   push:
+  #   paths-ignore:
+  #     - 'README.md'
+  # workflow_dispatch:
+
+# what the workflow does
 jobs:
-  greet: 
+  # name of your Jobs
+  greet:
+    # where the job runs (OS)
     runs-on: ubuntu-latest
+    # the sequence of steps the job does
     steps:
-       - name: Say Hello 
-         run: echo "Hello Friends"
-    repo-name:
+      - name: Say hello
+        run: echo "Hello Dosto"
+
+      - name: welcome
+        run: echo "Welcome Dosto"
+
+  repo-name:
     needs: greet
     runs-on: ubuntu-latest
     steps:
